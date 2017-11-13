@@ -14,7 +14,9 @@ iniWt = np.zeros((3,1))
 def costFunc(trainedOutputVector, originalOutputVector):
     cost = 0
     size = trainedOutputVector.shape
-    for i in range(0, size[0]):
-        cost = cost + (originalOutputVector[i] * np.log(trainedOutputVector[i]) + (1 - originalOutputVector[i]) * np.log(1 - trainedOutputVector[i]))
-    cost = -(1 / size[0]) * cost
+
+    first = np.multiply(-originalOutputVector, np.log(trainedOutputVector))
+    second = np.multiply((1 - originalOutputVector), np.log(1 - trainedOutputVector))
+    cost = np.sum(first - second)
+    cost = (1 / size[0]) * cost
     return cost
