@@ -1,14 +1,7 @@
 import numpy as np
 
 
-'''
-totalData = np.loadtxt("ex2data1.txt",delimeter=',')
-dataSize = totalData.shape
-trainingDataFeatures = np.hstack((hp.ones((dataSize[0])),totalData[0:dataSize[0]+1,0:2]))
-trainingOutputs = totalData[0:dataSize[0]+1,2:3]
 
-iniWt = np.zeros((3,1))
-'''
 
 
 def costFunc(trainedOutputVector, originalOutputVector):
